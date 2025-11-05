@@ -41,7 +41,7 @@
                             @csrf
                             <div class="col-md-12">
                                 <div class="input-field">
-                                    <input type="text" name="email" placeholder="Enter Mail id *" value="{{ old('email') }}" required autocomplete="off">
+                                    <input type="text" name="email" placeholder="Enter Mail id *" value="{{ old('email') }}"  autocomplete="off">
                                     <div class="icon-holder">
                                         <i class="fa fa-envelope" aria-hidden="true"></i>
                                     </div>
@@ -49,7 +49,15 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="input-field">
-                                    <input type="text" name="password" placeholder="Enter Password" required>
+                                    <input type="text" name="password" placeholder="Enter Password" >
+                                    <div class="icon-holder">
+                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-field">
+                                    <div class="g-recaptcha" data-sitekey="{{env('GOOGLE_RECAPTCHA_KEY')}}"></div>
                                     <div class="icon-holder">
                                         <i class="fa fa-unlock-alt" aria-hidden="true"></i>
                                     </div>

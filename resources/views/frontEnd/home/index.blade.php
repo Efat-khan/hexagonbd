@@ -101,6 +101,40 @@ $layout_setting = App\Models\LandingPage::first();
     <!-- CLIENT SECTION END -->
 
     <!-- SERVICES SECTION START -->
+    <style>
+        /* === Custom Styles for Services Section === */
+        .service-style1 p {
+            color: black !important;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .service-style1 h2,
+        .service-style1 .entry-title a {
+            color: black;
+            /* Deep yellow color */
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .service-style1 .entry-title a:hover {
+            color: #FFC300;
+            /* Slightly lighter yellow on hover */
+        }
+
+        /* Section title styling */
+        .fp-section-title h2 {
+            color: black;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        /* Optional: improve spacing */
+        .service-style1 .item-service {
+            margin-bottom: 30px;
+        }
+    </style>
+
     <div class="service-style1 secpadd">
         <div class="container">
             <div class="row">
@@ -109,59 +143,87 @@ $layout_setting = App\Models\LandingPage::first();
                         <h2>Services We Do.</h2>
                     </div>
                     <div class="srtextwrp">
-                        <p>Hexagon Engineering Ltd (HEL) is one of the leading engineering companies in Bangladesh, providing complete solutions in Ventilation, Plumbing & Drainage, Fire-Fighting, and Solar Works. With expert technical teams, modern tools, and strong global partnerships, HEL ensures maximum efficiency and reliable performance. Our services include ventilation systems (fans, ACs, chillers, ducting, humidity control), fire-fighting solutions (alarms, sprinklers, hydrants, extinguishers), and plumbing works (water supply, drainage, tanks, filtration, treatment systems). We also offer additional solutions like CCTV & access control, public address systems, CNG/LPG piping, LED lighting, and solar panel installations, supported by planning, consultancy, execution, inspection, and maintenance.
+                        <p>
+                            Hexagon Engineering Ltd (HEL) is one of the leading engineering companies in Bangladesh, providing complete solutions in Ventilation, Plumbing & Drainage, Fire-Fighting, and Solar Works. With expert technical teams, modern tools, and strong global partnerships, HEL ensures maximum efficiency and reliable performance. Our services include ventilation systems (fans, ACs, chillers, ducting, humidity control), fire-fighting solutions (alarms, sprinklers, hydrants, extinguishers), and plumbing works (water supply, drainage, tanks, filtration, treatment systems). We also offer additional solutions like CCTV & access control, public address systems, CNG/LPG piping, LED lighting, and solar panel installations, supported by planning, consultancy, execution, inspection, and maintenance.
                         </p>
-
-                        <!-- <br> -->
-                        <!-- <a class="btn-style1 " href="#">Go to all services</a> -->
                     </div>
                 </div>
+
                 <div class="col-sm-12 col-md-8">
-                    <div class="fp-service  style-1">
+                    <div class="fp-service style-1">
                         <div class="row service-list">
-                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service ">
+                            <!-- Ventilation -->
+                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service">
                                 <div class="entry-thumbnail">
                                     <div class="overlay ybgo9"></div>
                                     <a href="{{route('home.service.fixed-ventilation-system-page')}}"></a>
-                                    <img src="{{asset('images/default/service-we-do-1.jpg')}}" alt="image"><i class="factory-link"></i><span><i class="factory-mill"></i></span>
+                                    <img src="{{asset('images/default/service-we-do-1.jpg')}}" alt="image">
+                                    <i class="factory-link"></i><span><i class="factory-mill"></i></span>
                                 </div>
-                                <h2 class="entry-title"><a href="{{route('home.service.fixed-ventilation-system-page')}}">Ventilation System</a></h2>
-                                <p>We provide complete solutions for ventilation, including fans, ACs, pumps, boilers, chillers, cooling towers, AHUs, FCUs, dust/fume extraction, humidity & climate control, compressed air, ducting, and piping. Our services cover planning, consultancy, implementation, inspection, and maintenance.</p>
+                                <h2 class="entry-title">
+                                    <a href="{{route('home.service.fixed-ventilation-system-page')}}">Ventilation System</a>
+                                </h2>
+                                <p>
+                                    We provide complete solutions for ventilation, including fans, ACs, pumps, boilers, chillers, cooling towers, AHUs, FCUs, dust/fume extraction, humidity & climate control, compressed air, ducting, and piping. Our services cover planning, consultancy, implementation, inspection, and maintenance.
+                                </p>
                                 <a href="{{route('home.service.fixed-ventilation-system-page')}}" class="fp-btn-2nd readmore">Read More</a>
                             </div>
-                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service ">
+
+                            <!-- Fire-Fighting -->
+                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service">
                                 <div class="entry-thumbnail">
                                     <div class="overlay ybgo9"></div>
                                     <a href="{{route('home.service.fixed-fire-fighting-system-page')}}"></a>
-                                    <img src="{{asset('images/default/service-we-do-2.jpg')}}" alt="image"><i class="factory-link"></i><span><i class="factory-mill"></i></span>
+                                    <img src="{{asset('images/default/service-we-do-2.jpg')}}" alt="image">
+                                    <i class="factory-link"></i><span><i class="factory-mill"></i></span>
                                 </div>
-                                <h2 class="entry-title"><a href="{{route('home.service.fixed-fire-fighting-system-page')}}">Fire-Fighting System</a></h2>
-                                <p>We deliver end-to-end fire safety solutions, including fire alarm panels, pumps, detectors, sprinklers, hydrants, hose reels, and portable extinguishers. Our expertise ensures full system design, execution, inspection, and maintenance.</p>
+                                <h2 class="entry-title">
+                                    <a href="{{route('home.service.fixed-fire-fighting-system-page')}}">Fire-Fighting System</a>
+                                </h2>
+                                <p>
+                                    We deliver end-to-end fire safety solutions, including fire alarm panels, pumps, detectors, sprinklers, hydrants, hose reels, and portable extinguishers. Our expertise ensures full system design, execution, inspection, and maintenance.
+                                </p>
                                 <a href="{{route('home.service.fixed-fire-fighting-system-page')}}" class="fp-btn-2nd readmore">Read More</a>
                             </div>
-                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service ">
+
+                            <!-- Plumbing -->
+                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service">
                                 <div class="entry-thumbnail">
                                     <div class="overlay ybgo9"></div>
                                     <a href="{{route('home.service.fixed-plumbing-works-page')}}"></a>
-                                    <img src="{{asset('images/default/service-we-do-3.jpg')}}" alt="image"><i class="factory-link"></i><span><i class="factory-interface"></i></span>
+                                    <img src="{{asset('images/default/service-we-do-3.jpg')}}" alt="image">
+                                    <i class="factory-link"></i><span><i class="factory-interface"></i></span>
                                 </div>
-                                <h2 class="entry-title"><a href="{{route('home.service.fixed-plumbing-works-page')}}">Plumbing & Drainage Works</a></h2>
-                                <p>From water supply and drainage systems to pumps, tanks, filtration, treatment, storm drains, manholes, and toilet fixture installations, HEL provides complete plumbing solutions with ongoing inspection and maintenance.</p>
+                                <h2 class="entry-title">
+                                    <a href="{{route('home.service.fixed-plumbing-works-page')}}">Plumbing & Drainage Works</a>
+                                </h2>
+                                <p>
+                                    From water supply and drainage systems to pumps, tanks, filtration, treatment, storm drains, manholes, and toilet fixture installations, HEL provides complete plumbing solutions with ongoing inspection and maintenance.
+                                </p>
                                 <a href="{{route('home.service.fixed-plumbing-works-page')}}" class="fp-btn-2nd readmore">Read More</a>
                             </div>
-                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service ">
+
+                            <!-- Additional -->
+                            <div class="col-md-6 col-6 col-sm-6 col-xs-6 item-service">
                                 <div class="entry-thumbnail">
                                     <div class="overlay ybgo9"></div>
                                     <a href="{{route('home.service.fixed-additional-works-page')}}"></a>
-                                    <img src="{{asset('images/default/service-we-do-4.jpg')}}" alt="image"><i class="factory-link"></i><span><i class="factory-folder"></i></span>
+                                    <img src="{{asset('images/default/service-we-do-4.jpg')}}" alt="image">
+                                    <i class="factory-link"></i><span><i class="factory-folder"></i></span>
                                 </div>
-                                <h2 class="entry-title"><a href="{{route('home.service.fixed-additional-works-page')}}">Additional Solutions</a></h2>
-                                <p>We also offer advanced solutions in: CCTV & Access Control Systems, Public Address Systems, CNG/LPG Piping, LED Lighting, Solar Panel Installations.</p>
+                                <h2 class="entry-title">
+                                    <a href="{{route('home.service.fixed-additional-works-page')}}">Additional Solutions</a>
+                                </h2>
+                                <p>
+                                    We also offer advanced solutions in: CCTV & Access Control Systems, Public Address Systems, CNG/LPG Piping, LED Lighting, Solar Panel Installations.
+                                </p>
                                 <a href="{{route('home.service.fixed-additional-works-page')}}" class="fp-btn-2nd readmore">Read More</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Bottom Image -->
                 <div class="col-sm-12 col-md-12 text-center mt-4">
                     <img src="{{asset('images/default/web-core-service.png')}}" alt="image">
                 </div>
@@ -169,6 +231,7 @@ $layout_setting = App\Models\LandingPage::first();
         </div>
     </div>
     <!-- SERVICES SECTION END -->
+
     <!-- what make special -->
     <div class="make-special paralex secpadd70" style="background-image:url(images/bg/count-parallax.jpg);">
         <div class="container">
@@ -340,7 +403,9 @@ $layout_setting = App\Models\LandingPage::first();
     </div>
     @endif
     <!-- PROJECT END -->
-
+    <!-- Brand Section Start -->
+    @include('frontEnd.home.components.brands')
+    <!-- Brand SECTION END -->
     <div class="site-content" style="margin-top: 50px; margin-bottom: 50px;">
         <div class="container">
             <div class="row">
@@ -397,7 +462,7 @@ $layout_setting = App\Models\LandingPage::first();
                                 @endif
 
                                 <div class="col-sm-12 submit text-center paddtop30">
-                                    <input type="submit" value="Submit Now" class="fh-btn">
+                                    <input type="submit" value="Submit Now" class="fh-btn" style="background-color: #002a52;">
                                 </div>
                             </div>
                         </form>

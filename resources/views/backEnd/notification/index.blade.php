@@ -1,23 +1,22 @@
 @extends('backEnd.layouts.master')
-
 @section('content')
 <div class="page-wrapper">
 	<div class="page-content">
 		<!--breadcrumb-->
 		<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-			<div class="breadcrumb-title pe-3">Notice</div>
+			<div class="breadcrumb-title pe-3">Achievement & Career</div>
 			<div class="ps-3">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb mb-0 p-0">
 						<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 						</li>
-						<li class="breadcrumb-item active" aria-current="page">All Notice</li>
+						<li class="breadcrumb-item active" aria-current="page">All Achievement & Career</li>
 					</ol>
 				</nav>
 			</div>
 			<div class="ms-auto">
 				<div class="btn-group">
-					<button type="button" class="btn btn-primary" id="open_btn" value="0">Add Notice</button>
+					<button type="button" class="btn btn-primary" id="open_btn" value="0">Add Achievement & Career</button>
 				</div>
 			</div>
 		</div>
@@ -29,16 +28,16 @@
 				<form method="post" id="add_notice">
 					<div class="row">
 						<div class="col-md-10 mb-3">
-							<label class="form-label required">Notice Title</label>
+							<label class="form-label required">Title</label>
 							<input type="text" class="form-control " name="title" id="title" value="{{old('title')}}">
 							<p class="error"></p>
 						</div>
 						<div class="col-md-2 mb-3">
-							<label for="input33" class="form-label">Status</label>
+							<label for="input33" class="form-label">Select Achievement / Career</label>
 							<div class="input-group">
 								<select class="form-select" id="status" name="status">
-									<option value="active">Show</option>
-									<option value="block">Hide</option>
+									<option value="active">Achievement</option>
+									<option value="block">Career</option>
 								</select>
 							</div>
 						</div>
@@ -49,16 +48,9 @@
 							</textarea>
 						</div>
 						<div class="col-md-6 mb-3">
-							<label for="input23" class="form-label ">Service Image/file Upload</label>
+							<label for="input23" class="form-label ">Image/file Upload</label>
 							<input class="form-control" name="file" type="file" id="formFile">
 						</div>
-						
-						<div class="col-md-6 mb-3">
-							<label class="form-label ">Notice link</label>
-							<input type="text" class="form-control " name="link" id="link" value="{{old('link')}}">
-							<p class="error"></p>
-						</div>
-
 						
 						<!-- Image Preview Element -->
 						<div class="col-md-6 mb-3">
@@ -66,7 +58,7 @@
 						</div>
 						<div class="col-md-12 mb-3">
 							<div class="d-md-flex d-grid align-items-center gap-3">
-								<button type="submit" class="btn btn-primary px-4"><i class=' bx bxs-check-circle me-0'></i> Add Notice</button>
+								<button type="submit" class="btn btn-primary px-4"><i class=' bx bxs-check-circle me-0'></i> Add </button>
 							</div>
 						</div>
 					</div>
@@ -83,7 +75,7 @@
 							<tr>
 								<th>No</th>
 								<th>Title</th>
-								<th>Status</th>
+								<th>Type</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
@@ -99,12 +91,12 @@
 
 								<td>
 									@if($data->status == 'active')
-									<div class="badge rounded-pill text-danger bg-light-danger p-2 text-uppercase px-3">
-										<i class='bx bxs-circle align-middle me-1'></i>Show
+									<div class="badge rounded-pill text-success bg-light-success p-2 text-uppercase px-3">
+										<i class='bx bxs-circle align-middle me-1'></i>Achievement
 									</div>
 									@else
-									<div class="badge rounded-pill text-success bg-light-success p-2 text-uppercase px-3">
-										<i class='bx bxs-circle align-middle me-1'></i>Hide
+									<div class="badge rounded-pill text-info bg-light-info p-2 text-uppercase px-3">
+										<i class='bx bxs-circle align-middle me-1'></i>Career
 									</div>
 									@endif
 								</td>
@@ -146,7 +138,7 @@
 		} else {
 			document.getElementById('form_display').style.display = 'none';
 			$(this).val(0);
-			$(this).html('Add Notice');
+			$(this).html('Add Achievement & Career');
 		}
 	});
 </script>
@@ -220,12 +212,13 @@
 			},
 			success: function(response) {
 				$("button[type='submit']").prop("disabled", false);
-
+console.log(response.status);
 				if (response.status === true) {
+					// console.log(response);
 					$('#add_notice')[0].reset();
 					$("input, select, textarea").removeClass('is-invalid');
 					$(".error").removeClass('invalid-feedback').html('');
-					window.location.reload();
+					window.location = "{{route('admin.notification')}}";
 				} else {
 					displayErrors(response.errors);
 				}

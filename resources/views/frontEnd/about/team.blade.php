@@ -6,6 +6,28 @@
 
 @section('content')
 <style>
+    /* === TEAM PAGE CUSTOM STYLES === */
+
+    /* Team intro section */
+    .team-intro {
+        padding: 60px 0 40px 0;
+        text-align: center;
+    }
+    .team-intro h2 {
+        color: #FFD700; /* Deep yellow */
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+    .team-intro p {
+        color: black;
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Team member cards */
     .team-img {
         width: 100%;
         height: 300px;
@@ -36,8 +58,8 @@
         color: #222;
     }
     .team-info span {
-        color: #fac012;
-        font-size: 14px;
+        color: #002a52;
+        font-size: 15px;
         font-weight: 700;
     }
 
@@ -64,7 +86,6 @@
         opacity: 1;
         visibility: visible;
     }
-
     .team-overlay h4 {
         font-size: 18px;
         font-weight: 600;
@@ -72,9 +93,9 @@
         margin-bottom: 5px;
     }
     .team-overlay span {
-        color: #fac012;
-        font-weight: 500;
-        margin-bottom: 10px;
+        color: #002a52;
+        font-weight: 600;
+        margin-bottom: 15px;
     }
     .team-overlay p {
         font-size: 14px;
@@ -83,7 +104,7 @@
         margin-bottom: 15px;
     }
     .team-overlay .social-icons a {
-        color: #fac012;
+        color: #FFD700;
         font-size: 16px;
         margin: 0 6px;
         transition: color 0.3s;
@@ -121,6 +142,22 @@
     </div>
 </div>
 <!-- page-header end -->
+
+<!-- Meet Our Team Intro Section -->
+<section class="team-intro">
+    <div class="container">
+        <h2>Meet Our Team</h2>
+        <p>
+            Hexagon Engineering Limited is powered by a skilled team of full-time professionals working across three core divisions — 
+            Design and Engineering (DE), Project Execution and Management (PEM), and Business Development and Operations (BDO).<br><br>
+            The Design and Engineering (DE) division specializes in comprehensive HVAC, Plumbing, Fire Safety, and Electrical system design, 
+            ensuring innovative, sustainable, and cost-effective MEP solutions. Along with our in-house engineers and designers, the division 
+            is supported by a strong network of technical consultants, site supervisors, and field specialists, ensuring excellence, safety, 
+            and precision in every project we deliver.
+        </p>
+    </div>
+</section>
+<!-- Meet Our Team Intro End -->
 
 <div id="content" class="site-content slider3">
     <div class="ourteam-style1 secpadd">

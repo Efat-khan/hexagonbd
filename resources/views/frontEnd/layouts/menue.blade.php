@@ -1,6 +1,12 @@
 @php
 $layout_setting = \App\Models\LandingPage::first();
 @endphp
+<style>
+    .main-nav a {
+        font-weight: 550;
+        font-size: 19px;
+    }
+</style>
 <!-- topbar -->
 <div id="topbar" class="topbar">
     <div class="container">
@@ -24,13 +30,13 @@ $layout_setting = \App\Models\LandingPage::first();
                         <p class="inlineblock"><span class="text">Stay connected:</span></p>
                         <ul class="topbar-socials">
                             @if ($layout_setting && $layout_setting->fb_link)
-                              <li><a href="{{$layout_setting->fb_link??''}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"> </i></a></li>
+                            <li><a href="{{$layout_setting->fb_link??''}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"> </i></a></li>
                             @endif
                             @if ($layout_setting && $layout_setting->in_link)
-                              <li><a href="{{$layout_setting->in_link??''}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"> </i></a></li>
+                            <li><a href="{{$layout_setting->in_link??''}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"> </i></a></li>
                             @endif
                             @if ($layout_setting && $layout_setting->in_wp_linklink)
-                              <li><a href="{{$layout_setting->wp_link??''}}" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"> </i></a></li>
+                            <li><a href="{{$layout_setting->wp_link??''}}" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"> </i></a></li>
                             @endif
                         </ul>
                     </div>
@@ -68,29 +74,33 @@ $layout_setting = \App\Models\LandingPage::first();
                                     <li><a href="{{route('home.about')}}">About Us</a></li>
                                     <li><a href="{{route('home.management')}}">Our Management</a></li>
                                     <li><a href="{{route('home.team')}}">Hexagon Team</a></li>
-                                    <li><a href="{{route('home.org-chart')}}">Organization Chart 
-</a></li>
+                                    <li><a href="{{route('home.org-chart')}}">Organization Chart
+                                        </a></li>
+                                    <li><a href="{{route('home.client')}}"> Our Clients & Partner</a>
+                                    <li><a href="{{route('home.achievement.all')}}"> Achievements</a>
                                 </ul>
                             </li>
-                            <li class="dropdown-item"><a href="#"> Services</a>
-                                <ul class="sub-menu">
+                            <li class=""><a href="{{route('home.service.service_all')}}"> Services</a>
+                            <!-- <li class="dropdown-item"><a href="{{route('home.service.service_all')}}"> Services</a> -->
+                                <!-- <ul class="sub-menu">
                                     <li><a href="{{route('home.service.fixed-ventilation-system-page')}}"> Ventilation System</a></li>
                                     <li><a href="{{route('home.service.fixed-fire-fighting-system-page')}}"> Fire-Fighting System</a></li>
                                     <li><a href="{{route('home.service.fixed-plumbing-works-page')}}"> Plumbing Works
-</a></li>
+                                        </a></li>
                                     <li><a href="{{route('home.service.fixed-additional-works-page')}}"> Additional Solutions & Services
 
-</a></li>
-                                </ul>
+                                        </a></li>
+                                </ul> -->
                             </li>
                             <li class=""><a href="{{route('home.project.all')}}"> Projects</a>
-                                
+
                             </li>
-                            <li><a href="{{route('home.client')}}"> Our Clients & Partner</a>
+                            <!-- <li><a href="{{route('home.client')}}"> Our Clients & Partner</a> -->
                             </li>
                             <li class=""><a href="{{route('home.gallery.view')}}">Gallery</a></li>
-                            <li class=""><a href="#">Career</a></li>
-                            
+                            <li><a href="{{route('home.brand')}}"> Brands</a>
+                            <li class=""><a href="{{route('home.career.all')}}">Career</a></li>
+
                             <!-- <li><a href="contact.html"></a></li> -->
                             <li class="extra-menu-item menu-item-button-link">
                                 <a href="{{route('home.contact.view')}}" class="fp-btn btn">Contact Us</a>

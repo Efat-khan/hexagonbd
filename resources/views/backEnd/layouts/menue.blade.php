@@ -42,7 +42,7 @@ $layout_setting = \App\Models\LandingPage::first();
 			<a href="{{route('admin.notification')}}">
 				<div class="parent-icon"><i class='bx bx-bell'></i>
 				</div>
-				<div class="menu-title"> Notice</div>
+				<div class="menu-title"> Achievement & Career</div>
 			</a>
 		</li>
 		<li>

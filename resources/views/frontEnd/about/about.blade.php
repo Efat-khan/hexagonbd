@@ -194,6 +194,7 @@ $layout_setting = \App\Models\LandingPage::first();
         </div>
     </div>
     <!-- WHY CHOSE US END -->
+     {{-- 
     <!-- testimonial -->
     <div class="quote-testm1 paralex secpadd70" style="background-image:url({{asset('images/default/testimonial-2.jpg')}});">
         <div class="container">
@@ -244,6 +245,7 @@ $layout_setting = \App\Models\LandingPage::first();
         </div>
     </div>
     <!--testimonial end -->
+     --}}
 </div>
 @endsection
 @section('customeJS')

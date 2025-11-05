@@ -32,6 +32,7 @@ $layout_setting = \App\Models\LandingPage::first();
     <link rel="stylesheet" type="text/css" href="{{asset('/front-end-asset/css/revolution/settings.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/front-end-asset/css/revolution/layers.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/front-end-asset/css/revolution/navigation.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!--Favicon-->
     <link rel="shortcut icon" href="{{asset($layout_setting->logo_image??'')}}" type="image/x-icon">
@@ -41,6 +42,7 @@ $layout_setting = \App\Models\LandingPage::first();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{asset('front-end-asset/css/responsive.css')}}" rel="stylesheet">
     <!-- Toaster message -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         .colored-toast.swal2-icon-success {
             background-color: #a5dc86 !important;

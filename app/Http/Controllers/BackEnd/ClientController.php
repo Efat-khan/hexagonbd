@@ -20,10 +20,12 @@ class ClientController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         // Validate the main event data
         $validatedData = $request->validate([
             'company_name' => 'required|string|max:255',
             'contact_person' => 'nullable|string',
+            'type' => 'required|string|in:client,brand',
             'email' => 'nullable|email|max:255',
             'phone' => 'nullable|string|max:20',
             'alt_phone' => 'nullable|string|max:20',
@@ -96,6 +98,7 @@ class ClientController extends Controller
         $validatedData = $request->validate([
             'company_name' => 'required|string|max:255',
             'contact_person' => 'nullable|string',
+            'type' => 'required|string|in:client,brand',
             'email' => 'nullable|email|max:255',
             'phone' => 'nullable|string|max:20',
             'alt_phone' => 'nullable|string|max:20',

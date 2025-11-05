@@ -11,7 +11,7 @@
           <ol class="breadcrumb mb-0 p-0">
             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Edit Client & Portfolio</li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Client & Brand</li>
           </ol>
         </nav>
       </div>
@@ -25,13 +25,13 @@
     <!-- Update client -->
     <div class="card">
       <div class="card-body">
-        <h5 class="mb-4">Client & Portfolio Info</h5>
+        <h5 class="mb-4">Client & Brand Info</h5>
 
         <form method="POST" name="update_client" id="update_client">
           <input type="hidden" name="id" value="{{$client->id}}">
           <div class="row">
             <div class="col-md-4 mb-3">
-							<label class="form-label">Name</label>
+							<label class="form-label require">Name</label>
 							<input type="text" class="form-control" name="company_name" value="{{$client->company_name??''}}" placeholder="ex.BDcalling.">
 							<p class="error"></p>
 						</div>
@@ -87,17 +87,25 @@
 							</textarea>
 							<p class="error"></p>
 						</div>
-						<div class="col-md-6 mb-3">
+						<div class="col-md-4 mb-3">
 							<label for="input23" class="form-label">Image Upload</label>
 							<input class="form-control" name="image" type="file" id="formFile">
 						</div>
-						
-						<div class="col-md-6 mb-3">
+						<div class="col-md-4 mb-3">
+							<label for="input33" class="form-label">Type</label>
+							<div class="input-group">
+								<select class="form-select" id="input33" name="type">
+									<option value="client" {{ $client->type == 'client'?'selected':'' }}>Client</option>
+									<option value="brand" {{ $client->type == 'brand'?'selected':'' }}>Brand</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-4 mb-3">
 							<label for="input33" class="form-label">Status</label>
 							<div class="input-group">
 								<select class="form-select" id="input33" name="status">
-									<option value="active">Show</option>
-									<option value="blocked">Hide</option>
+									<option value="active" {{  $client->status == 'active'?'selected':'' }}>Show</option>
+									<option value="block" {{  $client->status == 'block'?'selected':'' }}>Hide</option>
 								</select>
 							</div>
 						</div>
@@ -109,7 +117,7 @@
             </div>
             <div class="col-md-12 mb-3">
               <div class="d-md-flex d-grid align-items-center gap-3">
-                <button type="submit" class="btn btn-primary px-4"><i class=' bx bxs-check-circle me-0'></i> Update client</button>
+                <button type="submit" class="btn btn-primary px-4"><i class=' bx bxs-check-circle me-0'></i> Update</button>
               </div>
             </div>
           </div>

@@ -44,4 +44,8 @@ class ServiceController extends Controller
     {
         return view('frontEnd.service.fixed_page.additional_works');
     }
+    public function service_all()
+    {
+        return view('frontEnd.service.fixed_page.service_all');
+    }
 }

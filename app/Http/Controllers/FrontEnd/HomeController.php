@@ -23,9 +23,10 @@ class HomeController extends Controller
     {
         $layout_data = LandingPage::first();
         $sliders = Slider::where('status', 'active')->orderBy('created_at', 'asc')->get();
-        $clients = Client::where('status', 'active')->orderBy('created_at', 'desc')->get();
+        $clients = Client::where('status', 'active')->where('type','client')->orderBy('created_at', 'desc')->get();
+        $brands = Client::where('status', 'active')->where('type','brand')->orderBy('created_at', 'desc')->get();
         $projects = Project::where('status', 'active')->where('show_on_home', 1)->orderBy('created_at', 'desc')->get();
-        return view('frontEnd.home.index', compact('layout_data', 'sliders', 'clients', 'projects'));
+        return view('frontEnd.home.index', compact('layout_data', 'sliders', 'clients', 'brands', 'projects'));
     }
     public function course()
     {
@@ -105,9 +106,15 @@ class HomeController extends Controller
     }
     public function client()
     {
-        $clients = Client::where('status', 'active')->orderBy('created_at', 'desc')->get();
+        $clients = Client::where('status', 'active')->where('type','client')->orderBy('created_at', 'desc')->get();
         $layout_data = LandingPage::first();
         return view('frontEnd.client-and-partner.index', compact('layout_data','clients'));
+    }
+    public function brands()
+    {
+        $brands = Client::where('status', 'active')->where('type','brand')->orderBy('created_at', 'desc')->get();
+        $layout_data = LandingPage::first();
+        return view('frontEnd.brand.index', compact('layout_data','brands'));
     }
 
     public function project_all()

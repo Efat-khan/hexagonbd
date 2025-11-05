@@ -42,23 +42,24 @@ class NotificationController extends Controller
         // Create the event
         $notification = Notification::create($validatedData);
         // Response based on the event creation
+
         if ($notification) {
             session()->flash('success', [
                 'icon' => 'success',
-                'title' => "{$validatedData['title']} notification added successfully."
+                'name' => "Achievement/ Career added successfully."
             ]);
             return response()->json([
                 'status' => true,
-                'message' => "{$validatedData['title']} notification added successfully.",
+                'message' => 'Achievement added successfully!',
             ]);
         } else {
             session()->flash('error', [
                 'icon' => 'error',
-                'title' => "Notification not added!"
+                'name' => "Achievement/ Career/ Career not added!"
             ]);
             return response()->json([
                 'status' => false,
-                'message' => 'Notification not added!',
+                'message' => 'Achievement/ Career not added!',
             ], 500);
         }
     }
@@ -104,20 +105,20 @@ class NotificationController extends Controller
         if ($notification->update($validatedData)) {
             session()->flash('success', [
                 'icon' => 'success',
-                'title' => "{$validatedData['title']} notification updated successfully."
+                'name' => "Updated successfully."
             ]);
             return response()->json([
                 'status' => true,
-                'message' => "{$validatedData['title']} notification updated successfully.",
+                'message' => "Updated successfully.",
             ]);
         } else {
             session()->flash('error', [
                 'icon' => 'error',
-                'title' => "{$validatedData['title']} notification update failed."
+                'name' => "Update failed."
             ]);
             return response()->json([
                 'status' => false,
-                'message' => 'Notification update failed!',
+                'message' => 'Update failed!',
             ], 500);
         }
     }
@@ -135,20 +136,20 @@ class NotificationController extends Controller
             $notice->delete();
             session()->flash('success', [
                 'icon' => 'success',
-                'title' => "Notice deleted successfully."
+                'title' => "Achievement/ Career deleted successfully."
             ]);
             return response()->json([
                 'status' => true,
-                'message' => "Notice deleted successfully.",
+                'message' => "Achievement/ Career deleted successfully.",
             ]);
         } else {
             session()->flash('error', [
                 'icon' => 'error',
-                'title' => "Notice not found."
+                'title' => "Achievement/ Career not found."
             ]);
             return response()->json([
                 'status' => false,
-                'message' => 'Notice not found.',
+                'message' => 'Achievement/ Career not found.',
             ], 500);
         }
     }

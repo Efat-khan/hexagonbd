@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('company_name');
+            $table->enum('type',['client','brand'])->default('client');
             $table->string('slug')->unique();
             $table->string('contact_person')->nullable();
             $table->string('email')->nullable();

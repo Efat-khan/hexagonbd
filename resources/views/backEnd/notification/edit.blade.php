@@ -5,14 +5,14 @@
   <div class="page-content">
     <!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-      <div class="breadcrumb-title pe-3">Notice</div>
+      <div class="breadcrumb-title pe-3">Achievement & Career</div>
       <div class="ps-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-0 p-0">
             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('admin.notification')}}">All Notice</a></li>
-            <li class="breadcrumb-item " aria-current="page">Edit Notice</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('admin.notification')}}">All Achievement & Career</a></li>
+            <li class="breadcrumb-item " aria-current="page">Edit Achievement & Career</li>
           </ol>
         </nav>
       </div>
@@ -30,16 +30,16 @@
           <input type="text" name="id" value="{{$notification->id}}" hidden>
           <div class="row">
             <div class="col-md-10 mb-3">
-              <label class="form-label required">Notice Title</label>
+              <label class="form-label required">Title</label>
               <input type="text" class="form-control " name="title" id="title" value="{{!empty($notification->title)?$notification->title:''}}">
               <p class="error"></p>
             </div>
             <div class="col-md-2 mb-3">
-              <label for="input33" class="form-label">Status</label>
+              <label for="input33" class="form-label">Select Achievement / Career</label>
               <div class="input-group">
                 <select class="form-select" id="status" name="status">
-                  <option value="active" {{$notification->status == 'active'?'selected':''}}>Show</option>
-                  <option value="block" {{$notification->status == 'block'?'selected':''}}>Hide</option>
+                  <option value="active" {{$notification->status == 'active'?'selected':''}}>Achievement</option>
+                  <option value="block" {{$notification->status == 'block'?'selected':''}}>Career</option>
                 </select>
               </div>
             </div>
@@ -50,18 +50,11 @@
               </textarea>
               <p class="error"></p>
             </div>
-            <div class="col-md-6 mb-3">
-              <label for="input23" class="form-label ">Notice Image/file Upload</label>
+            <div class="col-md-12 mb-3">
+              <label for="input23" class="form-label ">Image/file Upload</label>
               <input class="form-control" name="file" type="file" id="formFile">
               <p class="error"></p>
             </div>
-
-            <div class="col-md-6 mb-3">
-              <label class="form-label ">Notice link</label>
-              <input type="text" class="form-control " name="link" id="link" value="{{!empty($notification->link)?$notification->link:''}}">
-              <p class="error"></p>
-            </div>
-
 
             <!-- Image Preview Element -->
             @php
@@ -79,7 +72,7 @@
           </div>
           <div class="col-md-12 mb-3">
             <div class="d-md-flex d-grid align-items-center gap-3">
-              <button type="submit" class="btn btn-primary px-4"><i class=' bx bxs-check-circle me-0'></i> Update Notice</button>
+              <button type="submit" class="btn btn-primary px-4"><i class=' bx bxs-check-circle me-0'></i> Update </button>
             </div>
           </div>
       </div>
@@ -155,7 +148,7 @@
 
         if (response.status === true) {
           $('#update_notice')[0].reset();
-          window.location.reload();
+          window.location = "{{route('admin.notification')}}";
         } else {
           displayErrors(response.errors);
         }

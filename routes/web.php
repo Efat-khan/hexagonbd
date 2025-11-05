@@ -48,22 +48,31 @@ Route::get('/about/management',[HomeController::class,'management'])->name('home
 Route::get('/about/team',[HomeController::class,'team'])->name('home.team');
 Route::get('/about/org-chart',[HomeController::class,'orgChart'])->name('home.org-chart');
 Route::get('/client-and-partner',[HomeController::class,'client'])->name('home.client');
+Route::get('/achievement',[HomeController::class,'client'])->name('home.client');
+Route::get('/brands',[HomeController::class,'brands'])->name('home.brand');
 // Front End gallery routes
 Route::get('/Gallery',[HomeController::class,'gallery_view'])->name('home.gallery.view');
 // Front end Controller routes
 Route::get('/contact',[HomeController::class,'contact'])->name('home.contact.view');
 Route::post('/contact/store',[HomeController::class,'contact_store'])->name('home.contact.store');
 // Front end notice routes
-Route::get('/all-notice',[NoticeController::class,'all_notice'])->name('home.notice.all');
-Route::get('/notice/{id}',[NoticeController::class,'notice'])->name('home.notice.show');
-Route::get('/notice/search', [NoticeController::class, 'search'])->name('home.notice.search');
+// Route::get('/all-notice',[NoticeController::class,'all_notice'])->name('home.notice.all');
+// Route::get('/notice/{id}',[NoticeController::class,'notice'])->name('home.notice.show');
+// Route::get('/notice/search', [NoticeController::class, 'search'])->name('home.notice.search');
+// Front end achievement routes
+Route::get('/all-achievement',[NoticeController::class,'all_achievement'])->name('home.achievement.all');
+Route::get('/achievement/{id}',[NoticeController::class,'achievement'])->name('home.achievement.show');
+Route::get('/achievement/search', [NoticeController::class, 'search'])->name('home.achievement.search');
+Route::get('/all-career',[NoticeController::class,'all_career'])->name('home.career.all');
+Route::get('/career/search', [NoticeController::class, 'career_search'])->name('home.career.search');
 
-// Front end service routes
+// Front end Project routes
 Route::get('/all-project',[HomeController::class,'project_all'])->name('home.project.all');
 Route::get('/project/{id}',[HomeController::class,'project_show'])->name('home.project.show');
 Route::get('/project/search', [HomeController::class, 'project_search'])->name('home.project.search');
 // Front end service routes
 // Fixed Services Start
+Route::get('/service/all',[FrontEndServiceController::class,'service_all'])->name('home.service.service_all');
 Route::get('/service/ventilation-system',[FrontEndServiceController::class,'ventilation_system'])->name('home.service.fixed-ventilation-system-page');
 Route::get('/service/fire-fighting-system',[FrontEndServiceController::class,'fighting_system'])->name('home.service.fixed-fire-fighting-system-page');
 Route::get('/service/plumbing-works',[FrontEndServiceController::class,'plumbing_works'])->name('home.service.fixed-plumbing-works-page');
